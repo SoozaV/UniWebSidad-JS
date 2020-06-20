@@ -1,3 +1,4 @@
+// Solución proporcionada por UniWebSidad
 function informacion(elEvento) {
     var evento = elEvento || window.event;
     switch(evento.type) {

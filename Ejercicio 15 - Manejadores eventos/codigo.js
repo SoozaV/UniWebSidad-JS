@@ -1,23 +1,22 @@
-var ie = navigator.userAgent.toLowerCase().indexOf('msie') != -1;
 var info = document.getElementById('info');
 
 function coordenadasMouse(evento){
-  if(ie) {
-    paginaX = evento.clientX + document.body.scrollLeft;
-    paginaY = evento.clientY + document.body.scrollTop;
-  } else {
-    paginaX = evento.pageX;
-    paginaY = evento.pageY;
-  }
+  
+  paginaX = evento.pageX;
+  paginaY = evento.pageY;
   navegadorX = evento.clientX;
   navegadorY = evento.clientY;
-  muestraInformacion(['Ratón', `Documento: [${paginaX}, ${paginaY}]`, `Navegador: [${navegadorX}, ${navegadorY}]`]);
+  muestraInformacion(['Ratón',
+                      "Documento: [" + paginaX + ", " + paginaY + "]",
+                      "Navegador: [" + navegadorX + ", " + navegadorY + "]"]);
 }
 
 function teclasTeclado(evento){
   var caracter = evento.charCode || evento.keyCode;
   var letra = String.fromCharCode(caracter);
-  muestraInformacion(['Teclado', `Carácter: [${letra}]`, `Código: [${caracter}]`]);
+  muestraInformacion(['Teclado',
+                      "Carácter: [" + letra + "]",
+                      "Código: [" + caracter + "]"]);
 }
 
 function informacion(elEvento){
