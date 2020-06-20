@@ -1,48 +1,57 @@
+// Solución proporcionada por UniWebSidad
 function informacion(elEvento) {
-    var evento = elEvento || window.event;
-    switch(evento.type) {
-      case 'mousemove':
-        document.getElementById('info').style.backgroundColor = '#FFFFFF';
-        var ie = navigator.userAgent.toLowerCase().indexOf('msie')!=-1;
-        var coordenadaXrelativa, coordenadaYrelativa, coordenadaXabsoluta, coordenadaYabsoluta;
-        if(ie) {
-          if(document.documentElement && document.documentElement.scrollTop){ 
-            coordenadaXabsoluta = evento.clientX + document.documentElement.scrollLeft;
-            coordenadaYabsoluta = evento.clientY + document.documentElement.scrollTop;
-          }
-          else { 
-            coordenadaXabsoluta = evento.clientX + document.body.scrollLeft;
-            coordenadaYabsoluta = evento.clientY + document.body.scrollTop;
-          }
-        }
-        else {
-          coordenadaXabsoluta = evento.pageX;
-          coordenadaYabsoluta = evento.pageY;
-        }
-        coordenadaXrelativa = evento.clientX;
-        coordenadaYrelativa = evento.clientY;
-        muestraInformacion(['Rat�n', 'Navegador ['+coordenadaXrelativa+', '+coordenadaYrelativa+']', 'Pagina ['+coordenadaXabsoluta+', '+coordenadaYabsoluta+']']);
-        break;
-      case 'keypress':
-        document.getElementById('info').style.backgroundColor = '#CCE6FF';
-        var caracter = evento.charCode || evento.keyCode;
-        var letra = String.fromCharCode(caracter);
-        var codigo = letra.charCodeAt(0);
-        muestraInformacion(['Teclado', 'Car�cter ['+letra+']', 'C�digo ['+codigo+']']);
-        break;
-      case 'click':
-        document.getElementById('info').style.backgroundColor = '#FFFFCC';
-        break;
-    }
+  var evento = elEvento || window.event;
+
+  var coordenadaX = evento.clientX;
+  var coordenadaY = evento.clientY;
+
+  var dimensiones = tamanoVentanaNavegador();
+  var tamanoX = dimensiones[0];
+  var tamanoY = dimensiones[1];
+
+  var posicionHorizontal = "";
+  var posicionVertical = "";
+
+  if(coordenadaX > tamanoX/2) {
+    posicionHorizontal = "derecha";
   }
-  
-  function muestraInformacion(mensaje) {
-    document.getElementById("info").innerHTML = '<h1>'+mensaje[0]+'</h1>';
-    for(var i=1; i<mensaje.length; i++) {
-      document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
-    }
+  else {
+    posicionHorizontal = "izquierda";
   }
-  
-  document.onmousemove = informacion;
-  document.onkeypress = informacion;
-  document.onclick = informacion;
+
+  if(coordenadaY > tamanoY/2) {
+    posicionVertical = "abajo";
+  }
+  else {
+    posicionVertical = "arriba";
+  }
+
+  muestraInformacion(['Posicion', posicionHorizontal, posicionVertical]);
+}
+
+function muestraInformacion(mensaje) {
+  document.getElementById("info").innerHTML = '<h1>'+mensaje[0]+'</h1>';
+  for(var i=1; i<mensaje.length; i++) {
+    document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
+  }
+}
+
+function tamanoVentanaNavegador(){
+  // Adaptada de http:*www.howtocreate.co.uk/tutorials/javascript/browserwindow
+  var dimensiones = [];
+
+  if(typeof(window.innerWidth) == 'number') {
+    // No es IE
+    dimensiones = [window.innerWidth, window.innerHeight];
+  } else if(document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+    //IE 6 en modo estandar (no quirks)
+    dimensiones = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+  } else if(document.body && (document.body.clientWidth || document.body.clientHeight)) {
+    //IE en modo quirks
+    dimensiones = [document.body.clientWidth, document.body.clientHeight];
+  }
+
+  return dimensiones;
+}
+
+document.onclick = informacion;

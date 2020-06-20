@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: arial, helvetica; 
+    height: 200vh; 
+    overflow-x: hidden;
+}
+body::before {
+    content: "";
+    background: rgb(83, 83, 83);
+    height: 1px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 50%;
+}
+body::after {
+    content: "";
+    width: 1px;
+    height: 200%;
+    background: rgb(83, 83, 83);
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+#info {
+    width:300px; 
+    border:thin solid silver; 
+    padding:.5em; 
+    position:fixed;
+}
+#info h1 {
+    margin: 0;
+}
