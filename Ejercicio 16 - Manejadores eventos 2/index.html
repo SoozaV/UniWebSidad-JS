@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 16 - Información sobre eventos</title>
+  <style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {font-family: arial, helvetica; height: 200vh; overflow-x: hidden;}
+  #info {width:260px; border:thin solid silver; padding:.5em; position:fixed;}
+  #info h1 {margin: 0;}
+  .hor {
+    width: 1px;
+    height: 200%;
+    background: #000;
+    position: absolute;
+    left: 50%;
+    top: 0;
+  }
+  .ver {
+    height: 1px;
+    width: 100%;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 50%;
+  }
+  </style>
+</head>
+<body>
+  <div class="hor"></div>
+  <div class="ver"></div>
+  <div id="info"></div>
+  <script type="text/javascript" src="codigo.js"></script>
+</body>
+</html>
