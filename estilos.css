@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+h3, h2 {
+    font-family: 'Russo One', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h2 {
+    font-size: 2.5em;
+}
+h3 {
+    font-size: 1.3em;
+}
+main, header {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+article {
+    background: rgb(219, 219, 219);
+    border: 1px solid #777;
+    border-radius: 5px;
+    width: 49%;
+    padding: 35px;
+    margin-bottom: 20px;
+}
