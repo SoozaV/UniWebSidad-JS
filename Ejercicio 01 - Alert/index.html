@@ -1,14 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>El primer script</title>
-
-<script type="text/javascript" src="codigo.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 | Alert</title>
+    <link rel="stylesheet" href="../normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CodeStyler.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
     <noscript>Esta página requiere activar javascript para su correcto funcionamiento.</noscript>
-    <p>Esta página contiene el primer script.</p>
+    <article>
+        <p>Esta página contiene el primer script.</p>
+        <p>Eliminé el ejercicio 2 ya que prácticamente es lo mismo.</p>
+
+        <div>
+            <button id="alert">Mostrar alert()</button>
+            <button id="mostrarEjercicio">Mostrar instrucciones</button>
+            <button id="mostrarCodigo">Mostrar código</button>
+        </div>
+        <div class="exercise ocultar" id="ejercicio"><p class="title">Ejercicio 1</p> <p>Modificar el primer script para que:</p>
+            <ol>
+            <li>Todo el código JavaScript se encuentre en un archivo externo llamado <code>codigo.js</code> y el script siga funcionando de la misma manera.</li>
+            <li>Después del primer mensaje, se debe mostrar otro mensaje que diga <em>"Soy el primer script"</em>.</li>
+            <li>Añadir algunos comentarios que expliquen el funcionamiento del código.</li>
+            <li>Añadir en la página XHTML un mensaje de aviso para los navegadores que no tengan activado el soporte de JavaScript.</li>
+            </ol>
+            <p><a href="http://www.librosweb.es/javascript/capitulo_11.html" target="_blank">Ver solución</a></p>
+        </div>
+
+        <div class="code ocultar" id="codigo"><pre><span id='code2'>// Se obtienen los elementos del DOM
+var boton = document.getElementById("alert");
+var ejercicio = document.getElementById("ejercicio");
+var mostrarEjercicioBtn = document.getElementById("mostrarEjercicio");
+
+// Mensaje a mostrar en el alert. 
+// \n es para mostrar un salto de línea
+// \' sirve para mostrar comillas simples
+// \" sirve para mostrar comillas dobles
+var mensaje = "Hola Mundo!\nQué fácil es incluir \'comillas simples\' y \"comillas dobles\"";
+
+// Función para cambiar la clase del 'div' ejercicio.
+function mostrarEjercicio(){
+    ejercicio.classList.toggle("mostrar");
+    ejercicio.classList.contains("mostrar") ? mostrarEjercicioBtn.innerHTML = "Ocultar instrucciones" : mostrarEjercicioBtn.innerHTML = "Mostrar instrucciones";
+}
+
+// Función para mostrar los mensajes de alerta.
+function alerta(){
+    alert(mensaje);
+    alert("Soy el primer script");
+}
+
+boton.onclick = alerta;
+mostrarEjercicioBtn.onclick = mostrarEjercicio;</span></pre></div>
+    </article>
+    <a href="https://soozav.github.io/UniWebSidad-JS/">Volver a la lista de ejercicios</a>
+    <script type="text/javascript" src="codigo.js"></script>
+    <script src="../CodeStyler.js"></script>
 </body>
 </html>
