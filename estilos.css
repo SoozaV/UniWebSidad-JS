@@ -7,6 +7,9 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
 }
+h1 {
+    margin: 50px 0;
+}
 h3, h2 {
     font-family: 'Russo One', sans-serif;
     font-weight: 400;
@@ -29,10 +32,18 @@ main {
     flex-wrap: wrap;
 }
 article {
-    background: rgb(219, 219, 219);
+    background: #f7e018;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
     border: 1px solid #777;
     border-radius: 5px;
     width: 49%;
     padding: 35px;
     margin-bottom: 20px;
+    word-break: break-all;
+}
+article a {
+    text-decoration: none;
+    color: #202020;
 }
