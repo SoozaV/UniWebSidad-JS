@@ -43,8 +43,15 @@ button {
     border-radius: 5px;
     margin: 20px auto;
 }
-button:focus {
+button:focus, input:focus {
     outline: none;
+}
+article input[type="number"]{
+    display: block;
+    margin: 20px 0 0;
+}
+article label {
+    line-height: 27px;
 }
 .exercise {
     background: #f7f7f7;

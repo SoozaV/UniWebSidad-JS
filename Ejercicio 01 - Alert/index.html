@@ -30,10 +30,12 @@
             <p><a href="http://www.librosweb.es/javascript/capitulo_11.html" target="_blank">Ver solución</a></p>
         </div>
 
-        <div class="code ocultar" id="codigo"><pre><span id='code2'>// Se obtienen los elementos del DOM
+<div class="code ocultar" id="codigo"><pre><span id='code2'>// Se obtienen los elementos del DOM
 var boton = document.getElementById("alert");
 var ejercicio = document.getElementById("ejercicio");
+var codigo = document.getElementById("codigo");
 var mostrarEjercicioBtn = document.getElementById("mostrarEjercicio");
+var mostrarCodigoBtn = document.getElementById("mostrarCodigo");
 
 // Mensaje a mostrar en el alert. 
 // \n es para mostrar un salto de línea
@@ -47,6 +49,12 @@ function mostrarEjercicio(){
     ejercicio.classList.contains("mostrar") ? mostrarEjercicioBtn.innerHTML = "Ocultar instrucciones" : mostrarEjercicioBtn.innerHTML = "Mostrar instrucciones";
 }
 
+// Función para cambiar la clase del 'div' código.
+function mostrarCodigo(){
+    codigo.classList.toggle("mostrar");
+    codigo.classList.contains("mostrar") ? mostrarCodigoBtn.innerHTML = "Ocultar código" : mostrarCodigoBtn.innerHTML = "Mostrar código";
+}
+
 // Función para mostrar los mensajes de alerta.
 function alerta(){
     alert(mensaje);
@@ -54,7 +62,8 @@ function alerta(){
 }
 
 boton.onclick = alerta;
-mostrarEjercicioBtn.onclick = mostrarEjercicio;</span></pre></div>
+mostrarEjercicioBtn.onclick = mostrarEjercicio;
+mostrarCodigoBtn.onclick = mostrarCodigo;</span></pre></div>
     </article>
     <a href="https://soozav.github.io/UniWebSidad-JS/">Volver a la lista de ejercicios</a>
     <script type="text/javascript" src="codigo.js"></script>
