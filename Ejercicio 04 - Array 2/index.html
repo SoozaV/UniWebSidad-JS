@@ -57,7 +57,7 @@ let texto = "", suma, resta, multi, divi, modu, num1, num2;
 let valores = [true, 5, false, "hola", "adios", 2];
 
 // Se muestra el array en pantalla como guía
-cadena.innerHTML = "<b>Array:</b> [" + valores.join(", ") + "]";
+cadena.innerHTML = "Array: [" + valores.join(", ") + "]";
 
 // Determinar cual de los dos elementos de texto es mayor
 for(cadena in valores){
@@ -75,7 +75,7 @@ uno.innerText = "De los elementos de texto, el mayor es: " + texto;
 
 //Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores necesarios para obtener un resultado true y otro resultado false
 dos.innerHTML = valores[0] + " == " + valores[2] + " ---> " + (valores[0] == valores[2]) + 
-                "<br/>" + valores[0] + " != " + valores[2] + " ---> " + (valores[0] != valores[2]);
+                "< br/ >" + valores[0] + " != " + valores[2] + " ---> " + (valores[0] != valores[2]);
 
 //Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numéricos
 suma = num1 + num2;
@@ -85,10 +85,10 @@ divi = num1 / num2;
 modu = num1 % num2;
 
 tres.innerHTML = "La suma de " + num1 + " y " + num2 + " es igual a " + suma +
-                    "<br/>La resta de " + num1 + " y " + num2 + " es igual a " + resta +
-                    "<br/>El producto de " + num1 + " y " + num2 + " es igual a " + multi +
-                    "<br/>La división de " + num1 + " y " + num2 + " es igual a " + divi +
-                    "<br/>El módulo de " + num1 + " y " + num2 + " es igual a " + modu;
+                    "< br/ >La resta de " + num1 + " y " + num2 + " es igual a " + resta +
+                    "< br/ >El producto de " + num1 + " y " + num2 + " es igual a " + multi +
+                    "< br/ >La división de " + num1 + " y " + num2 + " es igual a " + divi +
+                    "< br/ >El módulo de " + num1 + " y " + num2 + " es igual a " + modu;
 
 // Función para cambiar la clase del 'div' ejercicio.
 function mostrarEjercicio(){
