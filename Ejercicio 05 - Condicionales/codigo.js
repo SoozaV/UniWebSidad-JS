@@ -40,7 +40,7 @@ function compararNumeros(){
       
       // Se verifica si numero1 puede ser mayor a numero2 si se le suma 1.
       if(!(++numero1 >= numero2)) {
-        resultado.innerHTML += "<p>Incrementar en 1 unidad el valor de " + numero1 + " no lo hace mayor o igual que " + numero2 + "</p>";
+        resultado.innerHTML += "<p>Incrementar en 1 unidad el valor de " + (numero1 - 1) + " no lo hace mayor o igual que " + numero2 + "</p>";
       }
     }
   }

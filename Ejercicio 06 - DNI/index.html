@@ -1,15 +1,90 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Condicionales - DNI</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales - DNI</title>
+    <link rel="stylesheet" href="../normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CodeStyler.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
-    <noscript>Esta página requiere activar javascript para su correcto funcionamiento.</noscript>
-    <p>Esta página contiene el script 6 - DNI.</p>
+    <article>
+        <noscript>Esta página requiere activar javascript para su correcto funcionamiento.</noscript>
+        <p>Esta página contiene el script 6 - DNI.</p>
+        <label for="dni">Introduce un DNI (sin letra)<input id="dni" type="text"></label>
+        <label for="letra">Introduce la letra del DNI<input id="letra" type="text"></label>
+        <div id="resultado"></div>
+        <div>
+            <button id="verificarDNIbtn">Verificar DNI</button>
+            <button id="mostrarEjercicio">Mostrar instrucciones</button>
+            <button id="mostrarCodigo">Mostrar código</button>
+        </div>
+        <div class="exercise ocultar" id="ejercicio"><p class="title">Ejercicio 5</p> <p>Completar las condiciones de los <code>if</code> del siguiente script para que los mensajes de los <code>alert()</code> se muestren siempre de forma correcta:</p>
+<div class="code javascript"><pre class="javascript"><span class="hljs-keyword">var</span> numero1 = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">var</span> numero2 = <span class="hljs-number">8</span>;
 
-    <script type="text/javascript" src="codigo.js"></script>
+<span class="hljs-keyword">if</span>(...) {
+    alert(<span class="hljs-string">"numero1 no es mayor que numero2"</span>);
+}
+<span class="hljs-keyword">if</span>(...) {
+    alert(<span class="hljs-string">"numero2 es positivo"</span>);
+}
+<span class="hljs-keyword">if</span>(...) {
+    alert(<span class="hljs-string">"numero1 es negativo o distinto de cero"</span>);
+}
+<span class="hljs-keyword">if</span>(...) {
+    alert(<span class="hljs-string">"Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2"</span>);
+}</pre></div>
+            <p><a href="http://www.librosweb.es/javascript/capitulo11/ejercicio_5.html" target="_blank">Ver solución</a></p>
+        </div>
+
+<div class="code ocultar" id="codigo"><pre><span id='code2'>// Se obtienen los elementos del DOM
+var comparar = document.getElementById("comparar");
+var resultado = document.getElementById("resultado");
+
+function compararNumeros(){
+        // Se obtienen los elementos del DOM
+    var num1 = document.getElementById("numUno"),
+        num2 = document.getElementById("numDos"),
+        // Se obtiene el valor numérico de los input
+        numero1 = Number(num1.value),
+        numero2 = Number(num2.value);
+
+        resultado.innerHTML = "";
+
+    // Si es un número fuera del rango o con punto decimal, manda mensaje de error
+    if(numero1 < -10 || numero1 > 10 || numero2 < -10 || numero2 > 10 || numero1 % 1 != 0 || numero2 % 1 != 0){
+    alert("Por favor introduce solo números enteros del -10 al 10.");
+    } else {
+    // Se compara si ambos números son iguales
+    if(numero1 == numero2) {
+        resultado.innerHTML += numero1 + " es igual a " + numero2;
+    } 
+    // Se compara si numero1 es mayor o menor que numero2
+    numero1 > numero2 ? resultado.innerHTML += numero1 + " es mayor que " + numero2 : resultado.innerHTML += numero1 + " es menor que " + numero2;
+    
+    // Se verifica si numero2 es positivo o negativo
+    numero2 >= 0 ? resultado.innerHTML += numero2 + " es un número positivo." : resultado.innerHTML += numero2 + " es un número negativo." ;
+
+    // Se verifica si numero1 es negativo o distinto de 0
+    if(numero1 < 0 || numero1 != 0) {
+        resultado.innerHTML += numero1 + " es negativo o distinto de cero.";
+    }
+
+    // Se verifica si numero1 puede ser mayor a numero2 si se le suma 1.
+    if(!(++numero1 >= numero2)) {
+        resultado.innerHTML += "Incrementar en 1 unidad el valor de " + (numero1 - 1) + " no lo hace mayor o igual que " + numero2;
+    }
+    }
+}
+
+comparar.onclick = compararNumeros;</span></pre></div>
+    </article>
+    <a href="https://soozav.github.io/UniWebSidad-JS/">Volver a la lista de ejercicios</a>
+    <script src="codigo.js"></script>
+    <script src="../mostrarOcultar.js"></script>
+    <script src="../CodeStyler.js"></script>
 </body>
 </html>

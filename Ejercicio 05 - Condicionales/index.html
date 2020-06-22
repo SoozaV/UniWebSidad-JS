@@ -75,7 +75,7 @@ function compararNumeros(){
 
     // Se verifica si numero1 puede ser mayor a numero2 si se le suma 1.
     if(!(++numero1 >= numero2)) {
-        resultado.innerHTML += "Incrementar en 1 unidad el valor de " + numero1 + " no lo hace mayor o igual que " + numero2;
+        resultado.innerHTML += "Incrementar en 1 unidad el valor de " + (numero1 - 1) + " no lo hace mayor o igual que " + numero2;
     }
     }
 }
@@ -84,7 +84,7 @@ comparar.onclick = compararNumeros;</span></pre></div>
     </article>
     <a href="https://soozav.github.io/UniWebSidad-JS/">Volver a la lista de ejercicios</a>
     <script src="codigo.js"></script>
-    <script src="mostrarOcultar.js"></script>
+    <script src="../mostrarOcultar.js"></script>
     <script src="../CodeStyler.js"></script>
 </body>
 </html>
